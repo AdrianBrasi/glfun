@@ -1,0 +1,6 @@
+# ninja log v6
+269	345	1721900329581975197	my_glfw_opengl_project	8b44f267f52cebb0
+4	269	1721900329317584935	CMakeFiles/my_glfw_opengl_project.dir/src/main.cpp.o	a810c9e92b711d0f
+295	373	1721901215293774295	glfun	3fc341cad3aab595
+0	290	1721901214999173648	CMakeFiles/glfun.dir/src/main.cpp.o	35974febb6662ee8
+1	45	1721901267715738087	build.ninja	d17a09576c37fcd4
