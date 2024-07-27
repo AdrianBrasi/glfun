@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
@@ -6,6 +7,9 @@ int winW = 1280;
 int winH = 720;
 SDL_Window* window = nullptr;
 SDL_GLContext glContext = nullptr;
+
+GLuint gVertexArrayObject = 0;
+GLuint gVertexBufferObject = 0;
 
 bool gameQuit = false;
 
@@ -16,6 +20,34 @@ void getGlVersion() {
     std::cout << "Shading Language: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 }
 
+void createGraphicsPipeline() {
+
+}
+
+void vertexSpec() {
+    const std::vector<GLfloat> vertexPosition {
+        -0.8f, -0.8f, 0.0f,
+        0.8f, -0.8f, 0.0f,
+        0.0f, 0.8f, 0.0f
+    };
+
+    glGenVertexArrays(1, &gVertexArrayObject);
+    glBindVertexArray(gVertexArrayObject);
+
+    glGenBuffers(1, &gVertexBufferObject);
+    glBindBuffer(GL_ARRAY_BUFFER, gVertexBufferObject);
+
+    glBufferData(GL_ARRAY_BUFFER,
+        vertexPosition.size() * sizeof(GLfloat), //NOLINT
+        vertexPosition.data(),
+        GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0); //NOLINT
+
+    glBindVertexArray(0);
+    glDisableVertexAttribArray(0);
+}
 
 void init() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -76,7 +108,7 @@ void draw() {
 }
 
 void mainLoop() {
-    while (!gameQuit) {
+    while (!gameQuit) { //NOLINT
         handleInput();
         preDraw();
         draw();
@@ -96,6 +128,8 @@ void cleanup() {
 
 int main() {
     init();
+    vertexSpec();
+    createGraphicsPipeline();
     mainLoop();
     cleanup();
     return 0;
