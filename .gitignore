@@ -1,5 +1,11 @@
-/*
-
-!CMakeLists.txt
+# Ignore everything
+*
+# Don't ignore directories, so the exclusions in the following steps can take effect
+!*/
+# Don't ignore .gitignore
+!.gitignore
+# Don't ignore CMakeLists.txt
+!/CMakeLists.txt
+# Don't ignore src/ and everything in it
 !/src/
-
+!/src/**
