@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/glfun.dir/src/main.cpp.o -o glfun  -lglfw /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so -lpthread -lX11 -lXxf86vm -lXrandr -lXi -lXcursor 
