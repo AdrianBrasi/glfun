@@ -93,7 +93,6 @@ glfun_EXTERNAL_OBJECTS =
 glfun: CMakeFiles/glfun.dir/src/main.cpp.o
 glfun: CMakeFiles/glfun.dir/build.make
 glfun: /usr/lib/x86_64-linux-gnu/libGLEW.so
-glfun: /usr/lib/x86_64-linux-gnu/libSDL2.so
 glfun: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 glfun: /usr/lib/x86_64-linux-gnu/libGLX.so
 glfun: CMakeFiles/glfun.dir/link.txt
